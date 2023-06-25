@@ -22,7 +22,6 @@ const Packaging = require('./packaging');
 const {asyncRimRaf} = require('./utils');
 const codeFrame = require('babel-code-frame');
 const Wrappers = require('./wrappers');
-const path = require("path")
 const RELEASE_CHANNEL = process.env.RELEASE_CHANNEL;
 
 // Default to building in experimental mode. If the release channel is set via
@@ -197,16 +196,10 @@ function getRollupOutputOptions(
     freeze: !isProduction,
     interop: false,
     name: globalName,
-    sourcemap: false,
-    esModule: false,
     sourcemap: true,
-    sourcemapPathTransform:(relativeSourcePath, sourcemapPath) => {
-      console.log({relativeSourcePath, sourcemapPath});
-      return path.resolve(
-        path.dirname(sourcemapPath),
-        relativeSourcePath
-      );
-    }
+    sourcemapPathTransform: (relativeSourcePath, sourcemapPath) => {
+      return relativeSourcePath.replace('../../../..', process.cwd());
+    },
   };
 }
 

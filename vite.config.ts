@@ -2,19 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 import path from "path";
-// import { viteExternalsPlugin } from "vite-plugin-externals";
-const resolve = (...p) => path.resolve(__dirname, ...p);
+import { viteExternalsPlugin } from "vite-plugin-externals";
 
-const getReactPath = (name) =>
-  resolve(`./package/react/build/oss-stable/${name}`);
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
-    // viteExternalsPlugin({
-    //   react: "React",
-    //   "react-dom": "ReactDOM",
-    // }),
+    react({ jsxRuntime: "classic" }),
+    viteExternalsPlugin({
+      react: "React",
+      "react-dom": "ReactDOM",
+    }),
   ],
   // resolve: {
   //   alias: [
