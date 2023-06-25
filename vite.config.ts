@@ -16,35 +16,35 @@ export default defineConfig({
     //   "react-dom": "ReactDOM",
     // }),
   ],
-  resolve: {
-    alias: [
-      {
-        find: "react",
-        replacement: getReactPath("react"),
-      },
-      {
-        find: "react-dom",
-        replacement: getReactPath("react-dom"),
-      },
-      {
-        find: "react-dom/client",
-        replacement: getReactPath("react-dom/client"),
-      },
-      {
-        find: "scheduler",
-        replacement: getReactPath("scheduler"),
-      },
-      {
-        find: "react-cache",
-        replacement: getReactPath("react-cache"),
-      },
-      {
-        find: "log",
-        replacement: getReactPath("log"),
-      },
-    ],
-  },
-  optimizeDeps: {
-    include: ["react", "react-dom", "scheduler", "react-cache", "log"],
-  },
+  // resolve: {
+  //   alias: [
+  //     {
+  //       find: "react",
+  //       replacement: getReactPath("react"),
+  //     },
+  //     {
+  //       find: "react-dom",
+  //       replacement: getReactPath("react-dom"),
+  //     },
+  //     {
+  //       find: "react-dom/client",
+  //       replacement: getReactPath("react-dom/client"),
+  //     },
+  //     {
+  //       find: "scheduler",
+  //       replacement: getReactPath("scheduler"),
+  //     },
+  //     {
+  //       find: "react-cache",
+  //       replacement: getReactPath("react-cache"),
+  //     },
+  //     {
+  //       find: "log",
+  //       replacement: getReactPath("log"),
+  //     },
+  //   ],
+  // },
+  // optimizeDeps: {
+  //   include: ["react", "react-dom", "scheduler", "react-cache", "log"],
+  // },
 });
