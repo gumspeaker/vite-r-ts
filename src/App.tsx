@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import PageA from "./pageA";
+import PageB from "./pageB";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PageA></PageA>,
+  },
+  {
+    path: "/detail/:id",
+    element: <PageB></PageB>,
+  },
+]);
 
 function App() {
-  const x = useState();
-  return <div>count</div>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
