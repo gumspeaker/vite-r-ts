@@ -1,19 +1,23 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageA from "./pageA";
-import PageB from "./pageB";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <PageA></PageA>,
-  },
-  {
-    path: "/detail/:id",
-    element: <PageB></PageB>,
-  },
-]);
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import PageB from "./pageB";
+
+import { useState } from "react";
 
 function App() {
-  return <RouterProvider router={router} />;
+  const [x, y] = useState(1);
+  console.log("A");
+
+  return (
+    <div onClick={() => y(x + 1)}>
+      {x}
+      {/* <C></C> */}
+    </div>
+  );
 }
+// function C() {
+//   console.log("c");
+
+//   return <div>11232</div>;
+// }
 
 export default App;
